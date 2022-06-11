@@ -38,3 +38,5 @@ with open('./ADEoutputs.csv', mode='w', newline='') as csv_file:
         entry['Output'] = f'(cross(clip(VT("/clk64T<{(i+1) % (max+1)}>") cross(clip(VT("/clk64T<{i}>") VAR("T_clip") VAR("T_runtime") ?interpolate nil) (VAR("DVDD") / 2) 1 "falling" nil nil VAR("tol")) VAR("T_runtime") ?interpolate nil) (VAR("DVDD") / 2) 1 "falling" nil nil VAR("config_crossingTol")) - cross(clip(VT("/clk64T<{i}>") VAR("T_clip") VAR("T_runtime") ?interpolate nil) (VAR("DVDD") / 2) 1 "falling" nil nil VAR("tol")))'
         entry['Spec'] = 'range (((VAR("T_clk") / 2) - VAR("spec_4T_skew_tol"))) (((VAR("T_clk") / 2) + VAR("spec_4T_skew_tol")))'
         writer.writerow(entry)
+
+        
